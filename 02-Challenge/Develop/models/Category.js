@@ -8,10 +8,11 @@ Category.init(
   {
     // define columns
     category_name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    category_id: {
-      type: Seq.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },

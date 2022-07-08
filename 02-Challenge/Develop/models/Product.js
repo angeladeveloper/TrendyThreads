@@ -11,8 +11,30 @@ Product.init(
   {
     // define columns
     product_name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+
     },
+    product_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'category_id',
+      },
+    }
+
   },
   {
     sequelize,
