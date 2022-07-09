@@ -17,12 +17,12 @@ Product.belongsTo(Category, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
-  foreignKey: "product_id",
-  through: { ProductTag, unique: false }
+  through: ProductTag,
+  foreignKey: "product_id"
 });
 Tag.belongsToMany(Product, {
-  foreignKey: "tag_id",
-  through: { ProductTag, unique: false }
+  through: ProductTag,
+  foreignKey: "tag_id"
 });
 // Tags belongToMany Products (through ProductTag)
 
